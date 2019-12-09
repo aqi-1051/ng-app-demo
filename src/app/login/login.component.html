@@ -1,0 +1,45 @@
+<div class="login-card">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card">
+                
+                <div class="card-body">
+                        <h5 class="card-title text-center">Sign In</h5>
+                    <form [formGroup]="loginForm" novalidate>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input class="form-control" id="username" type="text" formControlName="username"
+                                #username />
+                        </div>
+                        <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="loginForm.controls['username'].errors.required">
+                                Username is required.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passkey">Password</label>
+                            <input class="form-control" id="passkey" type="password" formControlName="passkey"
+                                #passkey/>
+                        </div>
+                        <div *ngIf="loginForm.controls['passkey'].invalid && (loginForm.controls['passkey'].dirty || loginForm.controls['passkey'].touched)"
+                            class="alert alert-danger">
+                            <div *ngIf="loginForm.controls['passkey'].errors.required">
+                                Password is required.
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <button (click)="login()" type="button" class="btn btn-primary"
+                                [disabled]="loginForm.pristine || loginForm.invalid">Login</button>
+                        </div>
+                    </form>
+                    <hr class="my-4"/>
+                    <div class="text-center">
+                            <button (click)="gotoSignUp()" class="btn btn-link">Sign Up</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
