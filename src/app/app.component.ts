@@ -8,6 +8,7 @@ import { NavigationCancel,
          Router } from '@angular/router'; 
 import {AuthUserService} from './auth-user.service';
 import { Observable } from 'rxjs/Observable';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent implements OnInit{  
   title = 'Aqib Ferhan';  
+  faHome = faHome;
 
   isLoggedIn$: Observable<boolean>;
 
